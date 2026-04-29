@@ -1,0 +1,31 @@
+services:
+  # Veritabanı Servisimiz
+  vector-db:
+    # Standart postgres imajı yerine, pgvector ekibinin 
+    # eklentiyi içine önceden kurduğu özel imajı kullanıyoruz.
+    image: pgvector/pgvector:pg17
+    container_name: yzv322e_pgvector_container
+    ports:
+      - "5433:5432"
+    environment:
+      # Veritabanı giriş bilgileri
+      - POSTGRES_USER=itu_student
+      - POSTGRES_PASSWORD=dateng2026
+      - POSTGRES_DB=vector_search_db
+    volumes:
+      # Veritabanı ilk açıldığında otomatik olarak 
+      # tabloları oluşturması için SQL dosyamızı bağlıyoruz.
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+
+  # Opsiyonel: Verileri görsel yönetmek için pgAdmin (Dersteki araçla tam uyum!)
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: yzv322e_pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@itu.edu.tr
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - vector-db
