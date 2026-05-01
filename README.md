@@ -35,6 +35,22 @@ To execute the vector similarity search demo, simply run the Python script:
 python main.py
 ```
 *Note: You can also explore the vectors visually by navigating to `http://localhost:8080` and logging into pgAdmin (Email: admin@itu.edu.tr | Password: admin).*
+### 4.1 Visualizing the Vectors via pgAdmin
+You can also explore the database visually by navigating to `http://localhost:8080`.
+
+**Step 1: Log in to the pgAdmin web interface:**
+*   **Email:** `admin@itu.edu.tr`
+*   **Password:** `admin`
+
+**Step 2: Connect to the PostgreSQL Server:**
+Once logged in, right-click on "Servers" > "Register" > "Server..." and enter the following details:
+*   **General Tab -> Name:** `pgvector-demo-db` (or any name you prefer)
+*   **Connection Tab -> Host name/address:** `postgres` *(Note: Use the exact service name defined in your docker-compose.yml)*
+*   **Connection Tab -> Port:** `5432`
+*   **Connection Tab -> Username:** `itu_student`
+*   **Connection Tab -> Password:** `dateng2026`
+
+After saving, navigate to `Databases` > `your_db_name` > `Schemas` > `public` > `Tables` to view the vectors inside the `books` table.
 
 ### 5. Expected output
 When you run the script, you should see the system connecting to the database and calculating the cosine distance between the target vector and the books in the database. The output will look exactly like this:
