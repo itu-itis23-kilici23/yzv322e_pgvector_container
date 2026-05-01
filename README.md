@@ -45,7 +45,7 @@ You can also explore the database visually by navigating to `http://localhost:80
 **Step 2: Connect to the PostgreSQL Server:**
 Once logged in, right-click on "Servers" > "Register" > "Server..." and enter the following details:
 *   **General Tab -> Name:** `pgvector-demo-db` (or any name you prefer)
-*   **Connection Tab -> Host name/address:** `postgres` *(Note: Use the exact service name defined in your docker-compose.yml)*
+*   **Connection Tab -> Host name/address:** `vector-db` 
 *   **Connection Tab -> Port:** `5432`
 *   **Connection Tab -> Username:** `itu_student`
 *   **Connection Tab -> Password:** `dateng2026`
