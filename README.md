@@ -14,8 +14,8 @@ Follow these step-by-step commands to set up the environment. The commands are c
 
 1. Clone this repository and navigate into the directory:
 ```bash
-git clone <https://github.com/itu-itis23-kilici23/yzv322e_pgvector_container>
-cd <yzv322e_pgvector_container>
+git clone https://github.com/itu-itis23-kilici23/yzv322e_pgvector_container
+cd yzv322e_pgvector_container
 ```
 
 2. Start the PostgreSQL database and pgAdmin containers in the background:
